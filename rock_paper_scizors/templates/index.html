@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+    <div class="index_start">
+        <form action="/statistics">
+            <button id="go_back_button" type="submit" role="button">
+                <img src="{{url_for('static', filename='line-chart.png')}}" alt="STATISTICS" id="chart">
+            </button>
+        </form>
+    </div>
+
+    <header>
+        <h1>
+            <span>HELLO</span>
+            <span>{{ nick }}</span>
+        </h1>
+
+        <div class="score">
+            <span>YOUR SCORE</span>
+            <strong class="points">{{ score }}</strong>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="just_for_center">
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

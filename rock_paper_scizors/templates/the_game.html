@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block body %}
+<form action="/results">
+    <div class="buttons">
+        <button type="submit" class="option_button" value="rock" name="option">
+            <div class="circle_inside_button">
+                <img src="{{url_for('static', filename='stone.png')}}"  alt="ROCK" class="option_image">
+            </div>
+        </button>
+
+        <button type="submit" class="option_button" value="paper" name="option">
+            <div class="circle_inside_button">
+                <img src="{{url_for('static', filename='paper.png')}}"  alt="PAPER" class="option_image" id="paper_image">
+            </div>
+        </button>
+
+        <button type="submit" class="option_button" value="scissors" name="option">
+            <div class="circle_inside_button">
+                <img src="{{url_for('static', filename='scissors.png')}}"  alt="SCISSORS" class="option_image" id="scissors_image">
+            </div>
+        </button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "play_button.html" %}
+
+{% block body %}
+
+<div class="play_again">
+    <form action="/game">
+        <button class="play_again_button" type="submit" role="button" action="/game">
+            <h1 class="play_text">PLAY AGAIN</h1>
+        </button>
+    </form>
+
+    <h1>
+        <span class="result_text" id="st_result_text">{{ first_word }}</span>
+        <span class="result_text" id="nd_result_text">{{ second_word }}</span>
+    </h1>
+</div>
+
+{% endblock %}

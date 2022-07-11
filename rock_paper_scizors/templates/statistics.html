@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <title>RockPaperScissors</title>
+</head>
+
+<body>
+    <div class="statistics">
+        <h1 id="statistics_title">YOUR STATISTICS</h1>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>START</th>
+                    <th>END</th>
+                    <th>TIME</th>
+                    <th>POINTS</th>
+                    <th>RESULT</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for game in statistics %}
+                    <tr>
+                        <th>{{ game["start_time"] }}</th>
+                        <th>{{ game["end_time"] }}</th>
+                        <th>{{ game["total_time"] }}</th>
+                        <th>{{ game["score"] }}</th>
+                        <th>{{ game["results"] }}</th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="menu_back">
+        <form action="/main_menu" method="post">
+            <button class="go_back_button" type="submit" role="button">
+                <img src="{{url_for('static', filename='next.png')}}" alt="GO BACK" id="go_back_image">
+            </button>
+        </form>
+    </div>
+
+</body>
+
+</html>

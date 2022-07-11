@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="logo">
+            <img id="logo" src="{{url_for('static', filename='rock-paper-scissors.png')}}" alt="RPS">
+            <h1 class="title">
+                <span>ROCK</span>
+                <span>PAPER</span>
+                <span>SCISSORS</span>
+            </h1>
+        </div>
+
+        <form class="data_collect" action="/main_menu" method="post">
+            <input class="login_data" id="nickname_input" type="text" placeholder="ENTER NICKNAME" name="nick">
+            <input class="login_data" id="nickname_commit" type="submit" name="submit" value="GO">
+        </form>
+
+        {% block body %}{% endblock %}
+
+    </div>
+
+</body>
+
+</html>
